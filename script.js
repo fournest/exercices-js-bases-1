@@ -1,43 +1,43 @@
 // exercice 1
 
-const firstName='Martin';
+const firstName = 'Martin';
 
-const anneeNaissance='2000';
+const anneeNaissance = '2000';
 
-let age=2025 - anneeNaissance;
+let age = 2025 - anneeNaissance;
 
 // console.log( "Bonjour Mr " + firstName +  " Vous avez "+ age + " ans" ); bonne pratique en dessous
-console.log (`Bonjour Mr ${firstName} Vous avez ${age} ans`)
+console.log(`Bonjour Mr ${firstName} Vous avez ${age} ans`)
 
 // exercice 2
 
-const noteMaths=15;
+const noteMaths = 15;
 
-const noteFrancais=12;
+const noteFrancais = 12;
 
-const noteHG=9;
+const noteHG = 9;
 
-let moyenne=(noteMaths+noteFrancais+noteHG)/3;
+let moyenne = (noteMaths + noteFrancais + noteHG) / 3;
 
-console.log( "La moyenne est de "+ moyenne + " / 20" ) ;
+console.log("La moyenne est de " + moyenne + " / 20");
 // exercice 3
 
-let sexe= "homme";
+let sexe = "homme";
 
 
 if (sexe === "homme") {
-    console.log ("Vous avez sélectionné le genre masculin.");
+    console.log("Vous avez sélectionné le genre masculin.");
 } else {
-    console.log ("Vous avez sélectionné le genre féminin.");
+    console.log("Vous avez sélectionné le genre féminin.");
 }
 
 // exercice 4
 
 const heure = 21
 
-if (heure >=6 && heure <12) {
+if (heure >= 6 && heure < 12) {
     console.log("c'est le matin");
-} else if (heure >=12 && heure <21) {
+} else if (heure >= 12 && heure < 21) {
     console.log("C'est l'après-midi");
 } else {
     console.log("C'est la nuit");
@@ -45,13 +45,13 @@ if (heure >=6 && heure <12) {
 
 // exercice 5
 
-const variable=2
+const variable = 2
 
-if (variable===1) {
+if (variable === 1) {
     console.log("Insérer");
-} else if( variable===2) {
+} else if (variable === 2) {
     console.log("Supprimer");
-} else if(variable===3) {
+} else if (variable === 3) {
     console.log("Afficher");
 } else {
     console.log("Ce choix n'existe pas");
@@ -61,7 +61,7 @@ if (variable===1) {
 
 let nombre = 15;
 
-if (nombre %3 === 0 && nombre %5 === 0) {
+if (nombre % 3 === 0 && nombre % 5 === 0) {
     console.log("Ce nombre est un mutiple de 3 et de 5");
 } else {
     console.log("Ce nombre n'est pas un multiple de 3 et de  5");
@@ -69,19 +69,38 @@ if (nombre %3 === 0 && nombre %5 === 0) {
 
 // exercice 7
 
-for (let i = 44000; i < 44999; i++) {
-    console.log("Code postal "+i);
-}
+// for (let i = 44000; i < 44999; i++) {
+//     console.log("Code postal "+i);
+// }
 
 // exercice 8
 
-// let box = 0;
+let box = 0;
 
-// while (box <=20) {
-//     if (box===10) {
-//         console.log("**" + box + "**");
-// } else  {
-//     console.log(box);
-// }
-//     box += 2;
-// }
+while (box <= 20) {
+    if (box === 10) {
+        console.log("**" + box + "**");
+    } else {
+        console.log(box);
+    }
+    box += 2;
+}
+// exercice 9
+function getSequence() {
+    let sequence = [];
+    let nombres;
+
+    while (true) {
+        nombres = Math.floor(Math.random() * 100);
+        sequence.push(nombres)
+        console.log(`Tirage :`, nombres);
+
+        if (sequence.length >= 3 &&
+            sequence[sequence.length - 3] % 2 === 0 &&
+            sequence[sequence.length - 2] % 2 !== 0 &&
+            sequence[sequence.length - 1] % 2 !== 0) {
+            console.log(`Séquence trouvée :`, sequence.slice(-3));
+            return sequence.slice(-3)
+        }
+    }
+}
