@@ -93,7 +93,7 @@ function getSequence() {
     while (true) {
         nombres = Math.floor(Math.random() * 100);
         sequence.push(nombres)
-        console.log(`Tirage :`, nombres);
+        // console.log(`Tirage :`, nombres);
 
         if (sequence.length >= 3 &&
             sequence[sequence.length - 3] % 2 === 0 &&
@@ -104,3 +104,26 @@ function getSequence() {
         }
     }
 }
+
+getSequence()
+
+// exercice 10
+
+let number = 166;
+let tirage, essais = 0;
+// avec while
+// while (tirage !== number) {
+//     tirage = Math.floor(Math.random() * 100);
+//     essais++;
+// }
+// console.log(`${number} a été trouvé en ${essais} essais`);
+
+// avec for
+tirage = null;
+for (essais = 0; tirage !== number; essais++) {
+    tirage = Math.floor(Math.random() * 1000);
+    
+}
+console.log(`${number} a été trouvé en ${essais} essais`);
+// exercice 11
+// let now = new Date()
