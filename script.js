@@ -125,5 +125,12 @@ for (essais = 0; tirage !== number; essais++) {
     
 }
 console.log(`${number} a été trouvé en ${essais} essais`);
+
 // exercice 11
-// let now = new Date()
+
+let now = new Date();
+const dateLocale = now.toLocaleDateString();
+const heureLocale = now.toLocaleTimeString();
+
+console.log(`Aujourd'hui nous sommes le ${dateLocale} et il est ${heureLocale} `);
+
